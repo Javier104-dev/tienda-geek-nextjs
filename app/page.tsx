@@ -1,8 +1,16 @@
+import Banner from '@/components/banner/Banner';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
+import Main from '@/components/main/Mian';
+
 const MainContent = () => {
   return (
-    <div>
-      pagina
-    </div>
+    <>
+      <Header/>
+      <Banner/>
+      <Main/>
+      <Footer/>
+    </>
   );
 };
 
