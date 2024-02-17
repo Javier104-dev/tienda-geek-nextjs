@@ -18,9 +18,13 @@
 }
 
 .header-search__button {
+  background-color: transparent;
+  border: none;
   position: absolute;
   right: 1rem;
   cursor: pointer;
+  font-size: 0;
+  padding: 0;
 }
 
 .header-search__input {

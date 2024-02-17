@@ -20,14 +20,17 @@ const Header: React.FC<className> = ({ container }) => {
             <input
               className='header-search__input'            
               placeholder='¿Qué deseas buscar?'
-            />
-            <Image
+            /> 
+            <button
               className='header-search__button'
-              src={'/lupa.png'}
-              alt={'Icono busqueda'}
-              height={18}
-              width={18}
-            />
+            >
+              <Image
+                src={'/lupa.png'}
+                alt={'Icono busqueda'}
+                height={18}
+                width={18}
+              />
+            </button>
           </div>
         </nav>
         <button className='header-login'>
