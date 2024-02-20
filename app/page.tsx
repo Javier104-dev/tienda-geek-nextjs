@@ -12,7 +12,9 @@ const MainContent: React.FC = () => {
       <Banner
         container={'container'}
       />
-      <Main/>
+      <Main
+        container={'container'}
+      />
       <Footer/>
     </>
   );
