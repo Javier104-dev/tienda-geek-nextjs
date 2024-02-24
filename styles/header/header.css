@@ -11,6 +11,10 @@
   column-gap: 2rem;
 }
 
+.header-nav__a {
+  font-size: 0;
+}
+
 .header-search {
   display: flex;
   align-items: center;

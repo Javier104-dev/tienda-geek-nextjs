@@ -1,4 +1,5 @@
-'use client'; // 👈 use it here
+'use client';
+
 import { getProducts } from '@/app/api/geekStoreProducts';
 import { useFetchReducer } from '@/hooks/useFetch';
 import '@/styles/main/main.css';
@@ -12,8 +13,7 @@ interface className {
 
 const Main: React.FC<className> = ({ container }) => {
   const { data, error, loading } = useFetchReducer(getProducts, null);
-  const [newData, setNewData] = useState();
-  console.log(data);
+  const [newData, setNewData] = useState<any>();
   
   useEffect(() => {
     if (data) {
@@ -78,7 +78,7 @@ const Main: React.FC<className> = ({ container }) => {
                     </span>
                     <Link
                       className='category-card__description__a'
-                      href='#'
+                      href={`/product/${e.id}`}
                     >
                       Ver producto
                     </Link>
