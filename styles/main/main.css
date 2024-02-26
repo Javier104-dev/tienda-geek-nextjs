@@ -2,8 +2,16 @@
   background-color: #F5F5F5;
 }
 
-.category-section {
+.main-section {
+  padding: 5rem 0;
+}
 
+.category-container {
+  margin-bottom: 5rem;
+}
+
+.main-section :last-child {
+  margin-bottom: 0rem;
 }
 
 .category-header {
@@ -27,7 +35,8 @@
 
 .category-cards {
   display: grid;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 50px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 

@@ -8,7 +8,7 @@ interface className {
 
 const Header: React.FC<className> = ({ container }) => {
   return (
-    <header>
+    <header className='header'>
       <section className={'header-section ' + container}>
         <nav className='header-nav'>
           <Link

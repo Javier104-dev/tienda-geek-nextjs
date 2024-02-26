@@ -33,11 +33,11 @@ const Main: React.FC<className> = ({ container }) => {
 
   return (
     <main className='main'>
-      <section className={container}>
+      <section className={'main-section ' + container}>
         {loading && (<div>Cargando</div>)}
         {newData && (newData.map((e: any, i: any) => (
           <section
-            className='category-section'
+            className='category-container'
             key={e.category}
           >
             <div className='category-header'>
