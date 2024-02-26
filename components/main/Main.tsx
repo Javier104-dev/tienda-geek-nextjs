@@ -5,7 +5,7 @@ import { useFetchReducer } from '@/hooks/useFetch';
 import '@/styles/main/main.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Key, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface className {
   container: string,
@@ -57,11 +57,11 @@ const Main: React.FC<className> = ({ container }) => {
                   className='category-card'
                   key={i}
                 >
-                  <div className='category-card__container__img'>
+                  <div className='category-card__container'>
                     <Image
-                      className='category-card__img'
+                      className='category-card__container__img'
                       src={'/consolas/consola1.jpg'}
-                      alt={'Imagen Producto'}
+                      alt={'Product'}
                       fill
                     />
                   </div>
@@ -74,7 +74,7 @@ const Main: React.FC<className> = ({ container }) => {
                     <span
                       className='category-card__description__price'
                     >
-                      {e.price}
+                      {`$ ${e.price}`}
                     </span>
                     <Link
                       className='category-card__description__a'

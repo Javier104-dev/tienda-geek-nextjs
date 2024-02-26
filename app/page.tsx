@@ -1,5 +1,5 @@
 import Banner from '@/components/banner/Banner';
-import Main from '@/components/main/Mian';
+import Main from '@/components/main/Main';
 
 const MainContent: React.FC = () => {
   return (

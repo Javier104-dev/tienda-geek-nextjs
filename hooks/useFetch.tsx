@@ -22,7 +22,7 @@ const fetchReducer = (state: any, action: any) => {
 };
 
 
-const useFetchReducer = (fetchResource: any, param: any) => {
+const useFetchReducer = (fetchResource: any, param: number | null) => {
   const [state, dispath] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const useFetchReducer = (fetchResource: any, param: any) => {
       try {
         const resource = await fetchResource(param);
         dispath({ type: 'SUCCESS', payload: resource });
-  
+
       } catch (error) {
         dispath({ type: 'FAILURE', payload: error });
       }

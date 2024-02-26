@@ -5,6 +5,12 @@ const getProducts = async () => {
   return products.json();
 };
 
+const getProduct = async (id: number) => {
+  const product = await fetch(`${GEEK_STORE_PRODUCT}/${id}`);
+  return product.json();
+};
+
 export {
   getProducts,
+  getProduct
 };

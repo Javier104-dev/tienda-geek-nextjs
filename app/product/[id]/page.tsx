@@ -1,14 +1,17 @@
 'use client';
+
+import ViewProduct from '@/components/main/ViewProduct';
 import { useParams } from 'next/navigation';
 
-const ViewProduct: React.FC = () => {
+const Product: React.FC = () => {
   const { id } = useParams();
 
   return (
-    <div>
-      {id}
-    </div>
+    <ViewProduct
+      id={Number(id)}
+      container={'container'}
+    />
   );
 };
 
-export default ViewProduct;
+export default Product;
