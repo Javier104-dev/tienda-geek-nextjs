@@ -13,12 +13,8 @@ const ViewProduct: React.FC<product> = ({ id, container }) => {
 
   return (
     <main className='main'>
-      <section
-        className={container}
-      >
-        {loading && (
-          <div>Cargando</div>
-        )}
+      <section className={container}>
+        {loading && (<div>Cargando</div>)}
         {data && (
           <>
             <div className='product'>
@@ -47,11 +43,7 @@ const ViewProduct: React.FC<product> = ({ id, container }) => {
             </div>
           </>
         )}
-        {error && (
-          <div>
-            error
-          </div>
-        )}
+        {error && (<div> error</div>)}
       </section>
     </main>
 

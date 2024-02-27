@@ -14,7 +14,7 @@ interface className {
 const Main: React.FC<className> = ({ container }) => {
   const { data, error, loading } = useFetchReducer(getProducts, null);
   const [newData, setNewData] = useState<any>();
-  
+
   useEffect(() => {
     if (data) {
       const formattedData = data.reduce((acumulador: any, elemento: any) => {
@@ -36,7 +36,7 @@ const Main: React.FC<className> = ({ container }) => {
       <section className={'main-section ' + container}>
         {loading && (<div>Cargando</div>)}
         {newData && (newData.map((e: any, i: any) => (
-          <section
+          <div
             className='category-container'
             key={e.category}
           >
@@ -66,14 +66,10 @@ const Main: React.FC<className> = ({ container }) => {
                     />
                   </div>
                   <div className='category-card__description'>
-                    <h1
-                      className='category-card__description__name'
-                    >
+                    <h1 className='category-card__description__name'>
                       {e.name}
                     </h1>
-                    <span
-                      className='category-card__description__price'
-                    >
+                    <span className='category-card__description__price'>
                       {`$ ${e.price}`}
                     </span>
                     <Link
@@ -86,7 +82,7 @@ const Main: React.FC<className> = ({ container }) => {
                 </div>
               )))}
             </div>
-          </section>
+          </div>
         )))}
         {error && (<div>{error}</div>)}
       </section>

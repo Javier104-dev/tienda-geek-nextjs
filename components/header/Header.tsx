@@ -1,12 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import '@/styles/header/header.css';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface className {
   container: string,
 }
 
 const Header: React.FC<className> = ({ container }) => {
+  const router = useRouter();
+
   return (
     <header className='header'>
       <section className={'header-section ' + container}>
@@ -27,9 +32,7 @@ const Header: React.FC<className> = ({ container }) => {
               className='header-search__input'
               placeholder='¿Qué deseas buscar?'
             />
-            <button
-              className='header-search__button'
-            >
+            <button className='header-search__button'>
               <Image
                 src={'/lupa.png'}
                 alt={'Icono busqueda'}
@@ -39,7 +42,12 @@ const Header: React.FC<className> = ({ container }) => {
             </button>
           </div>
         </nav>
-        <button className='header-login'>
+        <button
+          className='header-login'
+          onClick={() => {
+            router.push('/admin');
+          }}
+        >
           Login
         </button>
       </section>
