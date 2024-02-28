@@ -51,6 +51,21 @@
   object-fit: cover;
 }
 
+.edit-card__container__icon {
+  display: flex;
+  column-gap: 0.7rem;
+  color: #ffffff;
+  position: absolute;
+  font-size: 1.7rem;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.delete-icon:hover, .edit-icon:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
 .edit-card__detail {
   display: flex;
   flex-direction: column;

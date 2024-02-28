@@ -4,6 +4,8 @@ import { getProducts } from '@/app/api/geekStoreProducts';
 import { useFetchReducer } from '@/hooks/useFetch';
 import Image from 'next/image';
 import '@/styles/main/adminMain.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 interface className {
   container: string,
@@ -39,6 +41,10 @@ const AdminMain: React.FC<className> = ({ container }) => {
                       alt={'Product'}
                       fill
                     />
+                    <div className='edit-card__container__icon'>
+                      <FontAwesomeIcon icon={faPenToSquare} className='edit-icon' />
+                      <FontAwesomeIcon icon={faTrashCan} className='delete-icon' />
+                    </div>
                   </div>
                   <div className='edit-card__detail'>
                     <span className='edit-card__detail__name'>

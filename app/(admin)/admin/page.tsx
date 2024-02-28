@@ -1,4 +1,4 @@
-import AdminMain from '@/components/main/AdminMain';
+import AdminMain from '@/components/main/admin/AdminMain';
 
 const Administrator = () => {
   return (

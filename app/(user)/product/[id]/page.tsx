@@ -1,6 +1,6 @@
 'use client';
 
-import ViewProduct from '@/components/main/ViewProduct';
+import ViewProduct from '@/components/main/user/ViewProduct';
 import { useParams } from 'next/navigation';
 
 const Product: React.FC = () => {
