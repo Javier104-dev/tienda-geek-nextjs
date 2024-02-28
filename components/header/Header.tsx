@@ -45,7 +45,7 @@ const Header: React.FC<className> = ({ container }) => {
         <button
           className='header-login'
           onClick={() => {
-            router.push('/admin');
+            router.push('/admin/product');
           }}
         >
           Login

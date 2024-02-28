@@ -3,15 +3,15 @@
 import ViewProduct from '@/components/main/user/ViewProduct';
 import { useParams } from 'next/navigation';
 
-const Product: React.FC = () => {
+const ViewProductPage: React.FC = () => {
   const { id } = useParams();
 
   return (
     <ViewProduct
-      id={Number(id)}
       container={'container'}
+      id={Number(id)}
     />
   );
 };
 
-export default Product;
+export default ViewProductPage;

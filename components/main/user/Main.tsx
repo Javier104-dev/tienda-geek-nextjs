@@ -32,61 +32,59 @@ const Main: React.FC<className> = ({ container }) => {
   }, [data]);
 
   return (
-    <main className='main'>
-      <section className={'main-section ' + container}>
-        {loading && (<div>Cargando</div>)}
-        {newData && (newData.map((e: any, i: any) => (
-          <div
-            className='category-container'
-            key={e.category}
-          >
-            <div className='category-header'>
-              <h2 className='category-header__title'>
-                {e.category}
-              </h2>
-              <Link
-                className='category-header__a'
-                href='#'
-              >
-                Ver todo...
-              </Link>
-            </div>
-            <div className='category-cards'>
-              {(e.products.map((e: any, i: any) => (
-                <div
-                  className='category-card'
-                  key={i}
-                >
-                  <div className='category-card__container'>
-                    <Image
-                      className='category-card__container__img'
-                      src={'/consolas/consola1.jpg'}
-                      alt={'Product'}
-                      fill
-                    />
-                  </div>
-                  <div className='category-card__description'>
-                    <h1 className='category-card__description__name'>
-                      {e.name}
-                    </h1>
-                    <span className='category-card__description__price'>
-                      {`$ ${e.price}`}
-                    </span>
-                    <Link
-                      className='category-card__description__a'
-                      href={`/product/${e.id}`}
-                    >
-                      Ver producto
-                    </Link>
-                  </div>
-                </div>
-              )))}
-            </div>
+    <section className={'main-section ' + container}>
+      {loading && (<div>Cargando</div>)}
+      {newData && (newData.map((e: any, i: any) => (
+        <div
+          className='category-container'
+          key={e.category}
+        >
+          <div className='category-header'>
+            <h2 className='category-header__title'>
+              {e.category}
+            </h2>
+            <Link
+              className='category-header__a'
+              href='#'
+            >
+              Ver todo...
+            </Link>
           </div>
-        )))}
-        {error && (<div>{error}</div>)}
-      </section>
-    </main>
+          <div className='category-cards'>
+            {(e.products.map((e: any, i: any) => (
+              <div
+                className='category-card'
+                key={i}
+              >
+                <div className='category-card__container'>
+                  <Image
+                    className='category-card__container__img'
+                    src={'/consolas/consola1.jpg'}
+                    alt={'Product'}
+                    fill
+                  />
+                </div>
+                <div className='category-card__description'>
+                  <h1 className='category-card__description__name'>
+                    {e.name}
+                  </h1>
+                  <span className='category-card__description__price'>
+                    {`$ ${e.price}`}
+                  </span>
+                  <Link
+                    className='category-card__description__a'
+                    href={`/product/${e.id}`}
+                  >
+                    Ver producto
+                  </Link>
+                </div>
+              </div>
+            )))}
+          </div>
+        </div>
+      )))}
+      {error && (<div>{error}</div>)}
+    </section>
   );
 };
 

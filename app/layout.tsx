@@ -27,7 +27,9 @@ const RootLayout = ({
         <Header
           container={'container'}
         />
-        {children}
+        <main className='main'>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
