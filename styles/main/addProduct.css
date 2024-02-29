@@ -1,0 +1,45 @@
+.add-form {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.add-form__title {
+  color: #464646;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.add-form-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.add-form-div__name {
+  color: #464646;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.add-form-div__input {
+  color: #464646;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.25);
+  resize: none;
+}
+
+.add-form-div__input__file {
+  font-size: 1.1rem;
+  width: min-content;
+  cursor: pointer;
+}
+
+.add-form-button {
+  width: 100%;
+}

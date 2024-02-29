@@ -3,7 +3,7 @@
 import { getProducts } from '@/app/api/geekStoreProducts';
 import { useFetchReducer } from '@/hooks/useFetch';
 import Image from 'next/image';
-import '@/styles/main/adminMain.css';
+import '@/styles/main/manageProduct.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -48,15 +48,15 @@ const ManageProduct: React.FC<className> = ({ container }) => {
                     alt={'Product'}
                     fill
                   />
-                  <div className='edit-card__container__icon'>
+                  <div className='edit-card__icons'>
                     <Link
-                      className=''
+                      className='edit-card__icon'
                       href={''}
                     >
                       <FontAwesomeIcon icon={faPenToSquare} className='edit-icon' />
                     </Link>
                     <Link
-                      className=''
+                      className='edit-card__icon'
                       href={''}
                     >
                       <FontAwesomeIcon icon={faTrashCan} className='delete-icon' />
