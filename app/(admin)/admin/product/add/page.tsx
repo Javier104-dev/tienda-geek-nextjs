@@ -1,6 +1,6 @@
 import AddProduct from '@/components/main/admin/AddProduct';
 
-const AddProductPage = () => {
+const AddProductPage: React.FC = () => {
   return (
     <AddProduct/>
   );

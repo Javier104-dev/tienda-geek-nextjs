@@ -1,11 +1,8 @@
+import { ClassName } from '@/interface/interface';
 import '@/styles/banner/banner.css';
 import Link from 'next/link';
 
-interface className {
-  container: string,
-}
-
-const Banner: React.FC<className> = ({ container }) => {
+const Banner: React.FC<ClassName> = ({ container }) => {
   return (
     <section className='banner'>
       <div className={'banner-content ' + container}>

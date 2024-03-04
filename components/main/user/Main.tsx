@@ -2,28 +2,25 @@
 
 import { getProducts } from '@/app/api/geekStoreProducts';
 import { useFetchReducer } from '@/hooks/useFetch';
+import { Categories, ClassName, Product } from '@/interface/interface';
 import '@/styles/main/main.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-interface className {
-  container: string,
-}
-
-const Main: React.FC<className> = ({ container }) => {
+const Main: React.FC<ClassName> = ({ container }) => {
   const { data, error, loading } = useFetchReducer(getProducts, null);
-  const [newData, setNewData] = useState<any>();
+  const [newData, setNewData] = useState<Categories[]>();
 
   useEffect(() => {
-    if (data) {
-      const formattedData = data.reduce((acumulador: any, elemento: any) => {
+    if (data && Array.isArray(data)) {
+      const formattedData: Categories[] = data.reduce((acumulador: Categories[], elemento: Product) => {
 
-        if (!acumulador.find((e: any) => e.category === elemento.category)) {
+        if (!acumulador.find((e: Categories) => e.category === elemento.category)) {
           acumulador.push({ category: elemento.category, products: [] });
         }
 
-        const index = acumulador.findIndex((e: any) => e.category === elemento.category);
+        const index = acumulador.findIndex((e: Categories) => e.category === elemento.category);
         acumulador[index].products.push(elemento);
         return acumulador;
       }, []);

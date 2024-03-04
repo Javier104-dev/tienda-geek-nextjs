@@ -1,4 +1,4 @@
-const EditProduct = () => {
+const EditProduct: React.FC = () => {
   return (
     <div>Editar</div>
   );

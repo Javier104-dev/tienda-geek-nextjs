@@ -8,14 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ClassName, Product } from '@/interface/interface';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-interface className {
-  container: string,
-};
-
-const ManageProduct: React.FC<className> = ({ container }) => {
-  const { data, error, loading } = useFetchReducer(getProducts, null);
-  const router = useRouter();
+const ManageProduct: React.FC<ClassName> = ({ container }) => {
+  const { data, error, loading } = useFetchReducer(getProducts, 0);
+  const router: AppRouterInstance = useRouter();
+  const products = data as Product[];
 
   return (
     <section className={container}>
@@ -36,7 +35,7 @@ const ManageProduct: React.FC<className> = ({ container }) => {
             </button>
           </div>
           <div className='edit-cards'>
-            {data.map((e: any) => (
+            {products.map((e: Product) => (
               <div
                 className='edit-card'
                 key={e.id}

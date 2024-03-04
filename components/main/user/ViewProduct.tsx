@@ -2,19 +2,16 @@ import { getProduct } from '@/app/api/geekStoreProducts';
 import { useFetchReducer } from '@/hooks/useFetch';
 import Image from 'next/image';
 import '@/styles/main/viewProduct.css';
+import { IdAndClassName, Product } from '@/interface/interface';
 
-interface product {
-  id: number,
-  container: string,
-};
-
-const ViewProduct: React.FC<product> = ({ id, container }) => {
+const ViewProduct: React.FC<IdAndClassName> = ({ id, container }) => {
   const { data, error, loading } = useFetchReducer(getProduct, id);
+  const product = data as Product;
 
   return (
     <section className={container}>
       {loading && (<div>Cargando</div>)}
-      {data && (
+      {product && (
         <>
           <div className='product'>
             <div className='product-container'>
@@ -27,13 +24,13 @@ const ViewProduct: React.FC<product> = ({ id, container }) => {
             </div>
             <div className='product-detail'>
               <h1 className='product-detail__name'>
-                {data.name}
+                {product.name}
               </h1>
               <span className='product-detail__price'>
-                {`$ ${data.price}`}
+                {`$ ${product.price}`}
               </span>
               <p className='product-detail__description'>
-                {data.description}
+                {product.description}
               </p>
             </div>
           </div>

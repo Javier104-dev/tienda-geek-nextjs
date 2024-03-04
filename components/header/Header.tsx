@@ -4,13 +4,11 @@ import Image from 'next/image';
 import '@/styles/header/header.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ClassName } from '@/interface/interface';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-interface className {
-  container: string,
-}
-
-const Header: React.FC<className> = ({ container }) => {
-  const router = useRouter();
+const Header: React.FC<ClassName> = ({ container }) => {
+  const router: AppRouterInstance = useRouter();
 
   return (
     <header className='header'>

@@ -1,12 +1,13 @@
+import { Action, FetchFunction, MyState, Product } from '@/interface/interface';
 import { useEffect, useReducer } from 'react';
 
-const initialState = {
+const initialState: MyState = {
   loading: false,
   data: null,
   error: null
 };
 
-const fetchReducer = (state: any, action: any) => {
+const fetchReducer = (state: MyState, action: Action): MyState => {
   const { type, payload } = action;
 
   switch (type) {
@@ -20,25 +21,25 @@ const fetchReducer = (state: any, action: any) => {
       return state;
   }
 };
-
-
-const useFetchReducer = (fetchResource: any, param: number | null) => {
+const useFetchReducer = (fetchResource: FetchFunction, id: number) => {
   const [state, dispath] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
     const getData = async () => {
       dispath({ type: 'LOAD' });
       try {
-        const resource = await fetchResource(param);
+        console.log(id);
+        const resource: Product[] | Product = await fetchResource(id);
+        
         dispath({ type: 'SUCCESS', payload: resource });
 
-      } catch (error) {
+      } catch (error: any) {
         dispath({ type: 'FAILURE', payload: error });
       }
     };
 
     getData();
-  }, [fetchResource, param]);
+  }, [fetchResource, id]);
 
   return state;
 };

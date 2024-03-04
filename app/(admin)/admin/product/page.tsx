@@ -1,6 +1,6 @@
 import ManageProduct from '@/components/main/admin/ManageProduct';
 
-const ManageProductPage = () => {
+const ManageProductPage: React.FC = () => {
   return (
     <ManageProduct
       container={'container'}
