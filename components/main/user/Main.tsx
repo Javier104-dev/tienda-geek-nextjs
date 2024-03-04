@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const Main: React.FC<ClassName> = ({ container }) => {
-  const { data, error, loading } = useFetchReducer(getProducts, null);
+  const { data, error, loading } = useFetchReducer(getProducts, 0);
   const [newData, setNewData] = useState<Categories[]>();
 
   useEffect(() => {

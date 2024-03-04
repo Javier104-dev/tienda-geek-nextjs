@@ -28,7 +28,6 @@ const useFetchReducer = (fetchResource: FetchFunction, id: number) => {
     const getData = async () => {
       dispath({ type: 'LOAD' });
       try {
-        console.log(id);
         const resource: Product[] | Product = await fetchResource(id);
         
         dispath({ type: 'SUCCESS', payload: resource });

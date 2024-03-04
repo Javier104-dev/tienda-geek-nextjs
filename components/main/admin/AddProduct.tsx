@@ -20,7 +20,7 @@ const AddProduct: React.FC = () => {
       [name]: value,
     });
   };
-
+  
   return (
     <section>
       <form className='add-form'>
