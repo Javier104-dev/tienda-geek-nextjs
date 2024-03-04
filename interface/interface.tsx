@@ -9,6 +9,7 @@ export interface IdAndClassName {
 
 export interface Product {
   id?: number,
+  image: null | File,
   category: string,
   name: string,
   price: number,
@@ -23,7 +24,10 @@ export interface Categories {
 export interface TargetValue {
   name: string,
   value: string,
+  files?: FileList | null,
 };
+
+// HOOK useReducer
 
 export interface MyState {
   loading: false | true,
@@ -49,3 +53,5 @@ interface FailureAction {
 export type Action = LoadAction | SuccessAction | FailureAction;
 
 export type FetchFunction = (id: number) => Promise<Product | Product[]>;
+
+export type SetDateFunction = React.Dispatch<React.SetStateAction<Product>>;

@@ -21,19 +21,17 @@ const fetchReducer = (state: MyState, action: Action): MyState => {
       return state;
   }
 };
-const useFetchReducer = (fetchResource: FetchFunction, id: number) => {
+const useFetchReducer = (fetchResource: FetchFunction, id: number): MyState => {
   const [state, dispath] = useReducer(fetchReducer, initialState);
-
   useEffect(() => {
     const getData = async () => {
       dispath({ type: 'LOAD' });
       try {
         const resource: Product[] | Product = await fetchResource(id);
-        
         dispath({ type: 'SUCCESS', payload: resource });
 
       } catch (error: any) {
-        dispath({ type: 'FAILURE', payload: error });
+        dispath({ type: 'FAILURE', payload: error.message });
       }
     };
 

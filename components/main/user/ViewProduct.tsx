@@ -39,7 +39,7 @@ const ViewProduct: React.FC<IdAndClassName> = ({ id, container }) => {
           </div>
         </>
       )}
-      {error && (<div> error</div>)}
+      {error && (<div>{error}</div>)}
     </section>
   );
 };
